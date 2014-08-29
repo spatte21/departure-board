@@ -1,0 +1,22 @@
+{
+  "name": "departures",
+  "version": "0.0.0",
+  "authors": [
+    "Steve Patterson <spatte21@btinternet.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.21",
+    "lodash": "~2.4.1",
+    "moment": "~2.8.1"
+  }
+}

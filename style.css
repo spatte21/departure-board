@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-top-40 {
+    padding-top: 40px;
+}
+
+h1 {
+    color: white;
+    font-size: 92px;
+}
+
+@font-face {
+    font-family: 'LedBoard7';
+    src: url('advanced_led_board-7.ttf');
+}
+
+@font-face {
+    font-family: 'Famirids';
+    src: url('Famirids.ttf');
+}
+
+thead {
+    font-size: 24px;
+    color: white;
+}
+
+tbody {
+    font-family: 'LedBoard7';
+    font-size: 24px;
+    color: yellow;
+}
