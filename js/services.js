@@ -1,4 +1,4 @@
-angular.module('departuresApp').value('coralReefUrl', process.env.APPSETTING_CORAL_REEF_URL);
+angular.module('departuresApp').value('coralReefUrl', "http://coral-reef.azurewebsites.net");
 
 angular.module('departuresApp').factory('ReleaseSvc', function(coralReefUrl, $resource, $q) {
 
@@ -8,21 +8,21 @@ angular.module('departuresApp').factory('ReleaseSvc', function(coralReefUrl, $re
 
             var translated = {
                 version: record.releaseId,
-                destination: record.eventType
+                destination: record.type
             };
 
             var starts = moment(record.starts),
                 ends = moment(record.ends),
                 today = moment();
 
-            switch (record.eventType) {
+            switch (record.type) {
 
                 case 'Development':
                 case 'Regression':
 
                     if (starts.isAfter(today, 'day')) {
                         translated.status = 'Scheduled';
-                        translated.information = 'Gate opens ' + ends.fromNow();
+                        translated.information = 'Gate opens ' + starts.fromNow();
                         translated.time = starts.format('ddd Do MMM');
                     }
                     else if (starts.isBefore(today, 'second')) {

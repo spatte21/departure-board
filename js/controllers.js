@@ -1,7 +1,10 @@
-var departuresApp = angular.module('departuresApp', []);
+var departuresApp = angular.module('departuresApp', ['ngResource']);
 
 departuresApp.controller('DeparturesCtrl', function($scope, ReleaseSvc) {
 
-    $scope.events = ReleaseSvc.all();
+    ReleaseSvc.all().then(function(events) {
+        console.log(events);
+        $scope.events = events;    
+    });
 
 });
