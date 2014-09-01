@@ -56,8 +56,8 @@ angular.module('departuresApp').factory('ReleaseSvc', function(coralReefUrl, $re
                     }
                     else if (starts.isBefore(today, 'second')) {
                         translated.status = 'Departed';
-                        translated.information = 'Gate closed ' + ends.fromNow();
-                        translated.time = ends.format('ddd Do MMM');
+                        translated.information = 'Gate closed ' + starts.fromNow();
+                        translated.time = starts.format('ddd Do MMM');
                     }
 
                     break;
