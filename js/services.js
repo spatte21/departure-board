@@ -72,6 +72,9 @@ angular.module('departuresApp').factory('ReleaseSvc', function(coralReefUrl, $re
     return {
         all: function() {
 
+            console.log('yay');
+            console.log(coralReefUrl);
+
             var defer = $q.defer();
             var events = [];
 
