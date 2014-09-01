@@ -7,12 +7,12 @@ angular.module('departuresApp').factory('ReleaseSvc', function() {
                 {
                     type: 'Development',
                     starts: '2014-07-02',
-                    ends: '2014-08-05'
+                    ends: '2014-08-05 17:30:00'
                 },
                 {
                     type: 'Regression',
                     starts: '2014-08-06',
-                    ends: '2014-08-22'
+                    ends: '2014-08-22 17:30:00'
                 },
                 {
                     type: 'External Release',
@@ -30,12 +30,12 @@ angular.module('departuresApp').factory('ReleaseSvc', function() {
                 {
                     type: 'Development',
                     starts: '2014-08-06',
-                    ends: '2014-09-02'
+                    ends: '2014-09-02 17:30:00'
                 },
                 {
                     type: 'Regression',
                     starts: '2014-09-03',
-                    ends: '2014-09-10'
+                    ends: '2014-09-10 17:30:00'
                 },
                 {
                     type: 'External Release',
@@ -88,7 +88,7 @@ angular.module('departuresApp').factory('ReleaseSvc', function() {
 
                         if (starts.isAfter(today, 'day')) {
                             translated.status = 'Scheduled';
-                            translated.information = 'Gate opens ' + ends.fromNow();
+                            translated.information = 'Gate opens ' + starts.fromNow();
                             translated.time = starts.format('ddd Do MMM');
                         }
                         else if (starts.isBefore(today, 'second')) {
@@ -123,8 +123,8 @@ angular.module('departuresApp').factory('ReleaseSvc', function() {
                         }
                         else if (starts.isBefore(today, 'second')) {
                             translated.status = 'Departed';
-                            translated.information = 'Gate closed ' + ends.fromNow();
-                            translated.time = ends.format('ddd Do MMM');
+                            translated.information = 'Gate closed ' + starts.fromNow();
+                            translated.time = starts.format('ddd Do MMM');
                         }
 
                         break;
