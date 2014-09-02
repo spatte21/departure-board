@@ -34,7 +34,7 @@ angular.module('departuresApp').factory('ReleaseSvc', function(coralReefUrl, $re
                             if (ends.isAfter(today, 'day')) {
                                 translated.status = 'Boarding';
                             }
-                            else if (starts.isSame(today, 'day')) {
+                            else {
                                 translated.status = 'Final Call';
                             }
                             translated.information = 'Gate closing ' + ends.fromNow();
