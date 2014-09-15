@@ -78,7 +78,7 @@ angular.module('departuresApp').factory('ReleaseSvc', function(coralReefUrl, $re
             var defer = $q.defer();
             var events = [];
 
-            $resource(coralReefUrl + '/releaseEvent').query(function(data) {
+            $resource(coralReefUrl + '/releaseEvent?shush=2Sed5qDTFx9pxp6zxLfH').query(function(data) {
                 events = data;
                 defer.resolve(transformEventData(events));
             });
