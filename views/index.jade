@@ -1,0 +1,27 @@
+doctype html
+html(lang="en", ng-app="departures")
+  head
+    title Departure Board
+    link(rel="stylesheet", type="text/css", href="/lib/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", type="text/css", href="/css/style.css")
+        
+    script(src="/lib/angular/angular.js")
+    script(src="/lib/angular-resource/angular-resource.js")
+    script(src="/lib/angular-ui-router/release/angular-ui-router.js")
+    script(src="/lib/lodash/dist/lodash.js")
+    script(src="/lib/moment/moment.js")
+    script(src="/app/app.js")
+    script(src="/js/services.js")
+
+    script.
+      window.shush = "!{shush}"
+
+  body
+    div.container-fluid.padding-20
+      div.row
+        div.col-md-2
+          img.img-responsive(src="/img/airport-departure-sign.png")
+        div.col-md-10
+          h1 Departures
+      div.col-md-12.padding-top-40
+        .ui-view

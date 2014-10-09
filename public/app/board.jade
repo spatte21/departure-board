@@ -1,0 +1,14 @@
+table.table
+  thead
+    th Flight
+    th Destination
+    th Status
+    th Information
+    th Date
+  tbody
+    tr(ng-repeat="record in events")
+      td {{ record.version }}
+      td {{ record.destination }}
+      td {{ record.status }}
+      td {{ record.information }}
+      td {{ record.time }}
